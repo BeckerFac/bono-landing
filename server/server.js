@@ -71,8 +71,7 @@ const server = http.createServer((req, res) => {
     stats.track("c", req, q.get("ref"));
     const ref = (q.get("ref") || "").replace(/[^\w-]/g, "").slice(0, 20);
     const texto = TEXTO + (ref ? " (ref " + ref + ")" : "");
-    const dest =
-      "https://api.whatsapp.com/send?phone=" + waNext() + "&text=" + encodeURIComponent(texto);
+    const dest = "https://wa.me/" + waNext() + "?text=" + encodeURIComponent(texto);
     res.writeHead(302, {
       Location: dest,
       "Cache-Control": "no-store",

@@ -166,13 +166,13 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opac
   document.getElementById("cta").href = h;
 
   // si el archivo se abre suelto (sin servidor), arma el destino al tocar
-  var TELS = ["5492645049571"];
+  var TELS = ["5491130387635"];
   function suelto(e){
     if (location.protocol === "http:" || location.protocol === "https:") return;
     e.preventDefault();
     var t = "Hola! Quiero crear mi usuario y aprovechar el 200% de bono" + (ref ? " (ref " + ref + ")" : "");
-    location.href = ["https://","api.","whatsapp",".com/send"].join("") + "?phone=" +
-      TELS[Math.floor(Math.random()*TELS.length)] + "&text=" + encodeURIComponent(t);
+    location.href = "https://wa.me/" + TELS[Math.floor(Math.random()*TELS.length)] +
+      "?text=" + encodeURIComponent(t);
   }
   document.getElementById("cta").addEventListener("click", suelto);
 })();
